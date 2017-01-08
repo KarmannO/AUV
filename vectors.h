@@ -43,6 +43,11 @@ typedef unsigned int mat3ui[3][3];
 typedef unsigned int mat4ui[4][4];
 
 #define G_U 1000.0f
+inline float rad(float angle)
+{
+    return angle * PI / 180.0f;
+}
+
 inline void SetMatrix(mat3d &m, double m00, double m01, double  m02, double  m10, double  m11, double  m12, double  m20, double  m21, double  m22)
 {
     m[0][0]=m00;    m[0][1]=m01;    m[0][2]=m02;
