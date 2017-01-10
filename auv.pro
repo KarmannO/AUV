@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     CTimer.cpp \
     ImageLoader.cpp \
     CBaseModel.cpp \
-    CMeshData.cpp
+    CMeshData.cpp \
+    C3DSReader.cpp
 
 HEADERS  += RenderWidget.h \
     CCamera.h \
@@ -29,7 +30,8 @@ HEADERS  += RenderWidget.h \
     CControlButtonState.h \
     CTimer.h \
     CBaseModel.h \
-    CMeshData.h
+    CMeshData.h \
+    C3DSReader.h
 
 
 win32: LIBS += -L$$PWD/./ -lFreeImage -lopengl32 -lGLU32

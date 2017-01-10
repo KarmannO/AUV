@@ -5,6 +5,7 @@
 
 class CMeshData
 {
+public:
     int vertexN;
     int facesN;
     vec3 *verts;
@@ -12,8 +13,6 @@ class CMeshData
     vec2 *tex_coords;
     vec3us *faces;
 
-    void Copy(const CMeshData &mesh_data);
-public:
     CMeshData();
     CMeshData(const CMeshData &mesh_data);
     ~CMeshData();
@@ -22,6 +21,9 @@ public:
     void Free();
 
     CMeshData &operator=(const CMeshData &mesh_data);
+
+private:
+    void Copy(const CMeshData &mesh_data);
 };
 
 #endif // CMESHDATA_H
