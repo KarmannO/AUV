@@ -5,7 +5,7 @@
 
 class CCamera
 {
-private:
+protected:
     vec3 p, d, u, s;
     float rXY, rZ;
 
@@ -14,10 +14,10 @@ private:
 
     bool forward, backward;
 
+    virtual void ComputeVectors();
 public:
     CCamera();
 
-    virtual void ComputeVectors();
     virtual void SetView();
     virtual void RotZ(float angle);
     virtual void RotXY(float angle);

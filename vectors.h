@@ -48,6 +48,16 @@ inline float rad(float angle)
     return angle * PI / 180.0f;
 }
 
+inline float angCosf(float angle)
+{
+    return cosf(rad(angle));
+}
+
+inline float angSinf(float angle)
+{
+    return sinf(rad(angle));
+}
+
 inline void SetMatrix(mat3d &m, double m00, double m01, double  m02, double  m10, double  m11, double  m12, double  m20, double  m21, double  m22)
 {
     m[0][0]=m00;    m[0][1]=m01;    m[0][2]=m02;

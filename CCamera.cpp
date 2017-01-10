@@ -15,13 +15,13 @@ CCamera::CCamera()
 
 void CCamera::ComputeVectors()
 {
-    d[0] = cosf(rad(rZ)) * cosf(rad(rXY));
-    d[1] = sinf(rad(rZ)) * cosf(rad(rXY));
-    d[2] = sinf(rad(rXY));
+    d[0] = angCosf(rZ) * angCosf(rXY);
+    d[1] = angSinf(rZ) * angCosf(rXY);
+    d[2] = angSinf(rXY);
 
-    u[0] = -cosf(rad(rZ)) * sinf(rad(rXY));
-    u[1] = -sinf(rad(rZ)) * sinf(rad(rXY));
-    u[2] = cos(rad(rXY));
+    u[0] = -angCosf(rZ) * angSinf(rXY);
+    u[1] = -angSinf(rZ) * angSinf(rXY);
+    u[2] = angCosf(rXY);
 
     cross(d, u, s);
 }

@@ -14,10 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         RenderWidget.cpp \
-    CCamera.cpp
+    CCamera.cpp \
+    CFollowCamera.cpp \
+    CControlButtonState.cpp \
+    CTimer.cpp
 
 HEADERS  += RenderWidget.h \
     CCamera.h \
-    Vectors.h
+    Vectors.h \
+    CFollowCamera.h \
+    CControlButtonState.h \
+    CTimer.h
 
 LIBS += -lopengl32 -lGLU32
