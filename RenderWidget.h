@@ -18,12 +18,9 @@ class RenderWidget : public QGLWidget
     Q_OBJECT
 
     CControlButtonState control_state;
-
     CCamera *current_camera;
     CCamera global_cam;
-
     CTimer *timer;
-
     C3DSReader *reader;
     CModel *model;
 

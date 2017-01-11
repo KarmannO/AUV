@@ -21,7 +21,10 @@ SOURCES += main.cpp\
     ImageLoader.cpp \
     CMeshData.cpp \
     C3DSReader.cpp \
-    CModel.cpp
+    CModel.cpp \
+    CPhysicState.cpp \
+    CPhysicPoint.cpp \
+    PhysicMatrixOperations.cpp
 
 HEADERS  += RenderWidget.h \
     CCamera.h \
@@ -31,7 +34,10 @@ HEADERS  += RenderWidget.h \
     CTimer.h \
     CMeshData.h \
     C3DSReader.h \
-    CModel.h
+    CModel.h \
+    CPhysicState.h \
+    CPhysicPoint.h \
+    PhysicMatrixOperations.h
 
 
 win32: LIBS += -L$$PWD/./ -lFreeImage -lopengl32 -lGLU32
