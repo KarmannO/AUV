@@ -1,5 +1,10 @@
 #include "CModel.h"
 
+CModel::CModel()
+{
+
+}
+
 CModel::CModel(C3DSReader *reader)
 {
     this->reader = reader;
@@ -14,13 +19,7 @@ CModel::~CModel()
 bool CModel::LoadFrom3DS(const char *filename)
 {
     is_avalible = reader->Load(filename);
-    qDebug() << "Is avalible: " << is_avalible;
     mesh_data = reader->MeshData();
-}
-
-void CModel::Update(float dt)
-{
-
 }
 
 void CModel::Draw()

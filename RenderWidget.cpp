@@ -8,11 +8,11 @@ RenderWidget::RenderWidget(QWidget *parent)
 
     timer = new CTimer(this);
 
-    simulate = false;
+    simulate = true;
     current_camera = &global_cam;
 
     reader = new C3DSReader();
-    model = new CModel(reader);
+    model = new CPhysicModel(reader);
 }
 
 RenderWidget::~RenderWidget()
@@ -34,6 +34,7 @@ void RenderWidget::initializeGL()
     glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 
     model->LoadFrom3DS("C:\\Qt\\Projects\\grant\\auv\\shell.3DS");
+    model->SetWeight(2400.0f);
     timer->Start();
 }
 
@@ -156,7 +157,7 @@ void RenderWidget::timerEvent(QTimerEvent *event)
 {
     if(simulate)
     {
-
+        model->Update(timer->getTimerCoef());
     }
     updateGL();
 }

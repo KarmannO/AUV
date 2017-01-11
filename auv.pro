@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     CModel.cpp \
     CPhysicState.cpp \
     CPhysicPoint.cpp \
-    PhysicMatrixOperations.cpp
+    PhysicMatrixOperations.cpp \
+    CPhysicModel.cpp
 
 HEADERS  += RenderWidget.h \
     CCamera.h \
@@ -37,7 +38,8 @@ HEADERS  += RenderWidget.h \
     CModel.h \
     CPhysicState.h \
     CPhysicPoint.h \
-    PhysicMatrixOperations.h
+    PhysicMatrixOperations.h \
+    CPhysicModel.h
 
 
 win32: LIBS += -L$$PWD/./ -lFreeImage -lopengl32 -lGLU32

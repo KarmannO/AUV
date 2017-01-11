@@ -3,20 +3,23 @@
 #include <QDebug>
 #include "C3DSReader.h"
 #include "CMeshData.h"
+#include "CPhysicState.h"
 
 class CModel
 {
-private:
+protected:
     CMeshData mesh_data;
     C3DSReader *reader;
-
+    CPhysicState physic_state;
     bool is_avalible;
+
 public:
+    CModel();
     CModel(C3DSReader *reader);
     ~CModel();
 
     bool LoadFrom3DS(const char * filename);
-    void Update(float dt);
+    virtual void Update(float dt) = 0;
     void Draw();
 };
 
