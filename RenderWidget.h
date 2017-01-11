@@ -10,6 +10,8 @@
 #include "CCamera.h"
 #include "CTimer.h"
 #include "CControlButtonState.h"
+#include "C3DSReader.h"
+#include "CModel.h"
 
 class RenderWidget : public QGLWidget
 {
@@ -21,6 +23,9 @@ class RenderWidget : public QGLWidget
     CCamera global_cam;
 
     CTimer *timer;
+
+    C3DSReader *reader;
+    CModel *model;
 
     bool simulate;
 public:

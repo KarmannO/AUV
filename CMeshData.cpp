@@ -69,6 +69,7 @@ void CMeshData::Draw()
             glNormal3fv(normals[faces[i][2]]);
             glVertex3fv(verts[faces[i][2]]);
         }
+    glEnd();
 }
 
 CMeshData::~CMeshData()

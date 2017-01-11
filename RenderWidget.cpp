@@ -10,6 +10,9 @@ RenderWidget::RenderWidget(QWidget *parent)
 
     simulate = false;
     current_camera = &global_cam;
+
+    reader = new C3DSReader();
+    model = new CModel(reader);
 }
 
 RenderWidget::~RenderWidget()
@@ -30,6 +33,7 @@ void RenderWidget::initializeGL()
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 
+    model->LoadFrom3DS("C:\\Qt\\Projects\\grant\\auv\\shell.3DS");
     timer->Start();
 }
 
@@ -50,6 +54,7 @@ void RenderWidget::paintGL()
     current_camera->SetView();
 
     paintGrid();
+    model->Draw();
 }
 
 void RenderWidget::paintGrid()
